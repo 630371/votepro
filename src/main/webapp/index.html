@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Authentication</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>User Authentication</h1>
+        <div id="result"></div>
+
+        <div id="loginForm">
+            <h2>Login</h2>
+            <form id="login">
+                <input type="text" id="loginUsername" placeholder="Username" required>
+                <input type="password" id="loginPassword" placeholder="Password" required>
+                <button id="loginButton" type="submit">Login</button>
+                <p>Don't have an account? <a href="#" id="toggleToSignup">Sign Up</a></p>
+            </form>
+        </div>
+
+        <div id="signupForm" style="display: none;">
+            <h2>Sign Up</h2>
+            <form id="signup">
+                <input type="text" id="signupUsername" placeholder="Username" required>
+                <input type="password" id="signupPassword" placeholder="Password" required>
+                <input type="email" id="signupEmail" placeholder="Email" required>
+                <input type="text" id="signupPhone" placeholder="Phone (e.g., +6303719496)" required>
+                <input type="text" id="signupVoterId" placeholder="Voter ID (e.g., ABC12345)" required>
+                <button id="signupButton" type="submit">Sign Up</button>
+                <p>Already have an account? <a href="#" id="toggleToLogin">Login</a></p>
+            </form>
+        </div>
+
+        <div id="confirmationForm" style="display: none;">
+            <h2>Confirm Your Account</h2>
+            <form id="confirmation">
+                <input type="text" id="confirmUsername" placeholder="Username" required>
+                <input type="text" id="confirmationCode" placeholder="Confirmation Code" required>
+                <button id="confirmationButton" type="submit">Confirm</button>
+            </form>
+        </div>
+
+        <div id="voteForm" style="display: none;">
+            <h2>Vote</h2>
+            <form id="vote">
+                <input type="text" id="voter_id" placeholder="Voter ID" required>
+                <h3>Select Party:</h3>
+                <label>
+                    <input type="radio" name="party" value="tdp" required> TDP
+                </label>
+                <label>
+                    <input type="radio" name="party" value="ysrcp"> YSRCP
+                </label>
+                <label>
+                    <input type="radio" name="party" value="jsp"> JSP
+                </label>
+                <label>
+                    <input type="radio" name="party" value="bjp"> BJP
+                </label>
+                <label>
+                    <input type="radio" name="party" value="congress"> Congress
+                </label>
+                <button type="submit">Cast Vote</button>
+            </form>
+        </div>
+
+        <button id="fetchResultsButton" style="display: none;">Fetch Results</button>
+        <div id="resultsSection" style="display: none;">
+            <h2>Results</h2>
+            <div id="results"></div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
